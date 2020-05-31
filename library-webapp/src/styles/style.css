@@ -1,6 +1,7 @@
 .pageContainer {
   position: relative;
   min-height: 100vh;
+  height: 400px;
 }
 
 div.nav {
@@ -95,10 +96,9 @@ input[type="submit"]:hover {
 }
 
 footer {
-  position: absolute;
+  bottom: 0;
+  position: sticky;
   text-align: center;
   background-color: gray;
-  bottom: 0;
   width: 100%;
-  height: 2.5rem;
 }

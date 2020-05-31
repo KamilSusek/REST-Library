@@ -33,16 +33,17 @@ public class BookController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteBookById(@PathVariable long id) {
+    public void deleteBookById(@PathVariable int id) {
         for (int i = 0; i < books.size(); i++) {
             if (i == id) {
+                System.out.println(i);
                 books.remove(i);
             }
         }
     }
 
     @PutMapping("/update/{id}")
-    public void updateBookByTitle(@PathVariable long id, @RequestBody Book book) {
+    public void updateBookByTitle(@PathVariable int id, @RequestBody Book book) {
         for (int i = 0; i < books.size(); i++) {
             if (i == id) {
                 books.get(i).setTitle(book.getTitle());

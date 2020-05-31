@@ -11,10 +11,13 @@ const ContextProvider = () => {
     axios({
       url: `http://localhost:8080/get-all`,
     }).then((response) => setBooks((books) => [...response.data]));
+    window.location.reload();
   }
 
   useEffect(() => {
-    getAll();
+    axios({
+      url: `http://localhost:8080/get-all`,
+    }).then((response) => setBooks((books) => [...response.data]));
   }, []);
 
   return (

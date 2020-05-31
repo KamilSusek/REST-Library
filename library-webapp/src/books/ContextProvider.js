@@ -7,14 +7,18 @@ export const Context = createContext();
 const ContextProvider = () => {
   const [books, setBooks] = useState([]);
 
-  useEffect(() => {
+  async function getAll() {
     axios({
       url: `http://localhost:8080/get-all`,
     }).then((response) => setBooks((books) => [...response.data]));
+  }
+
+  useEffect(() => {
+    getAll();
   }, []);
 
   return (
-    <Context.Provider value={{ books }}>
+    <Context.Provider value={{ books, getAll }}>
       <PageContent></PageContent>
     </Context.Provider>
   );

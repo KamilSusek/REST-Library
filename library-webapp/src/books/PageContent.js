@@ -1,17 +1,17 @@
 import React, { createContext } from "react";
 import "../styles/style.css";
 import BooksListing from "./BooksListing.jsx";
-import AddBookForm from './AddBookForm.jsx'
-import EditBooks from './EditBooks';
-import DeleteBooks from './DeleteBooks'
+import AddBookForm from "./AddBookForm.jsx";
+import EditBooks from "./EditBooks";
+import DeleteBooks from "./DeleteBooks";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 const PageContent = () => {
   return (
-    <div>
+    <div className="pageContainer">
       <Router>
         <div>
-          <div className="navbar">
+          <div className="nav">
             <nav>
               <ul>
                 <li>
@@ -33,9 +33,15 @@ const PageContent = () => {
             <Route path="/get-books">
               <BooksListing />
             </Route>
-            <Route path="/add-books"><AddBookForm /></Route>
-            <Route path="/update-books"><EditBooks /></Route>
-            <Route path="/delete-books"><DeleteBooks /></Route>
+            <Route path="/add-books">
+              <AddBookForm />
+            </Route>
+            <Route path="/update-books">
+              <EditBooks />
+            </Route>
+            <Route path="/delete-books">
+              <DeleteBooks />
+            </Route>
           </div>
         </div>
       </Router>

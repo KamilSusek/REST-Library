@@ -6,12 +6,21 @@ const BooksListing = () => {
   const { books } = useContext(Context);
 
   return (
-    <div>
+    <div className="booksList">
       <ul>
         {books.map((elem, index) => {
           return (
-            <li key={index}>
-              {elem.author} {elem.title} {elem.genre}
+            <li style={{ marginTop: "1%" }} key={index}>
+              <fieldset>
+                Author: {elem.author}
+                <br />
+                Title:{"  "}
+                {elem.title}
+                <br />
+                Genre:{"  "}
+                {elem.genre}
+                <br />
+              </fieldset>
             </li>
           );
         })}
